@@ -37,3 +37,40 @@ def add_note():
  print("Заметка добавлена")
 
 
+
+def edit_note():
+ notes = load_notes()
+ note_id = input("Введите идентификатор заметки, которую хотите отредактировать: ")
+
+ if note_id in notes:
+    title = input("Введите новый заголовок заметки: ")
+    body = input("Введите новый текст заметки: ")
+    timestamp = input("Введите новую дату/время изменения заметки: ")
+
+    note = {
+    'title': title,
+    'body': body,
+    'timestamp': timestamp
+    }
+
+    notes[note_id] = note
+    save_notes(notes)
+    print("Заметка отредактирована")
+
+ else:
+    print("Заметка с таким идентификатором не существует")
+
+
+
+def delete_note():
+    notes = load_notes()
+    note_id = input("Введите идентификатор заметки, которую хотите удалить: ")
+    if note_id in notes:
+        del notes[note_id]
+        save_notes(notes)
+        print("Заметка удалена")
+
+    else:
+        print("Заметка с таким идентификатором не существует")
+
+
