@@ -74,3 +74,30 @@ def delete_note():
         print("Заметка с таким идентификатором не существует")
 
 
+
+def view_note():
+ notes = load_notes()
+ note_id = input("Введите идентификатор заметки, которую хотите посмотреть: ")
+
+ if note_id in notes:
+    note = notes[note_id]
+    print("Заголовок:", note['title'])
+    print("Тело заметки:", note['body'])
+    print("Дата/время создания/изменения:", note['timestamp'])
+
+ else:
+    print("Заметка с таким идентификатором не существует")
+
+
+
+def list_notes():
+ notes = load_notes()
+
+ for note_id, note in notes.items():
+    print("Идентификатор:", note_id)
+    print("Заголовок:", note['title'])
+    print("Тело заметки:", note['body'])
+    print("Дата/время создания/изменения:", note['timestamp'])
+    print()
+
+
