@@ -101,3 +101,44 @@ def list_notes():
     print()
 
 
+
+def main():
+
+ while True:
+    print("1. Добавить заметку")
+    print("2. Редактировать заметку")
+    print("3. Удалить заметку")
+    print("4. Посмотреть заметку")
+    print("5. Показать список заметок")
+    print("6. Выйти")
+
+
+
+    choice = input("Выберите действие: ")
+
+    if choice == '1':
+        add_note()
+
+    elif choice == '2':
+        edit_note()
+
+    elif choice == '3':
+        delete_note()
+
+    elif choice == '4':
+        view_note()
+
+    elif choice == '5':
+        list_notes()
+
+    elif choice == '6':
+        break
+
+    else:
+        print("Некорректный ввод")
+
+
+
+if __name__ == '__main__':
+
+ main()
